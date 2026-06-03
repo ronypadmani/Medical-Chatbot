@@ -6,11 +6,11 @@
 Clone the repository
 
 ```bash
-Project repo: git clone https://github.com/ronypadmani/Medical-Chatbot.git
+git clone https://github.com/ronypadmani/Medical-Chatbot.git
 ```
 ### STEP 01- Create a virtual environment after opening the repository
 ```bash
- python -m venv venv
+python -m venv venv
 source venv/Scripts/activate
 ```
 ### STEP 02- install the requirements
