@@ -1,6 +1,6 @@
 # Medical-Chatbot
 
-# How to run?
+## How to run?
 ### STEPS:
 
 Clone the repository
