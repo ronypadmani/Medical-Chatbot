@@ -135,6 +135,10 @@ border-radius: 0 0 15px 15px !important;
 	font-size: 10px;
 	color: rgba(255,255,255,0.6);
 }
+.user_info a{
+	font-size: 10px;
+	color: white;
+}
 .video_cam{
 	margin-left: 50px;
 	margin-top: 5px;
