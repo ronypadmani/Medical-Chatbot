@@ -1,9 +1,9 @@
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from typing import List
 from langchain.schema import Document
-import torch
+
 
 # Extract Data form the PDF file
 def load_pdf_file(data):
@@ -52,8 +52,10 @@ def text_split(minimal_docs):
 
 def download_embeddings():
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
+
     embeddings = HuggingFaceEmbeddings(
         model_name=model_name,
-        model_kwargs={"device": "cuda" if torch.cuda.is_available() else "cpu"},
+        model_kwargs={"device": "cpu"},
     )
+
     return embeddings
