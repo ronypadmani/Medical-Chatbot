@@ -48,7 +48,7 @@ docsearch = PineconeVectorStore.from_existing_index(
 retrieval = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
 chatmodel = ChatOpenAI(
-    model="google/gemma-4-31b-it:free",
+    model="meta-llama/llama-3.3-70b-instruct:free",
     api_key=os.getenv("OPENAI_API_KEY"),
     base_url="https://openrouter.ai/api/v1"
 )
