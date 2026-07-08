@@ -133,7 +133,7 @@ if not pc.has_index(INDEX_NAME):
 vectorstore = PineconeVectorStore.from_existing_index(
     index_name=INDEX_NAME,
     embedding=embeddings
-)   
+)
 
 # ---------------------------------------------------
 # Add ONLY New Chunks
