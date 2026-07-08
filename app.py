@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for
 from src.helper import download_embeddings,filter_to_minimal_docs, text_split
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import ChatOpenAI
+from langchain_mistralai import ChatMistralAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -47,10 +48,10 @@ docsearch = PineconeVectorStore.from_existing_index(
 
 retrieval = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
-chatmodel = ChatOpenAI(
-    model="mistralai/mistral-small-3.2-24b-instruct:free",
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url="https://openrouter.ai/api/v1"
+chatmodel = ChatMistralAI(
+    model="mistral-small-latest",
+    temperature=0.2,
+    api_key=os.getenv("MISTRAL_API_KEY")
 )
 
 prompt = ChatPromptTemplate.from_messages(
